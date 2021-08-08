@@ -1,0 +1,75 @@
+/* CSS for share confession page */
+.page-header {
+    display: block;
+    width: fit-content;
+    margin: 0 auto ;
+}
+
+h1 {
+    font-family: cursive;
+    color: aqua;
+    animation: flashFontColor 2s infinite;
+}
+
+@keyframes flashFontColor {
+    from {
+        color: aqua;
+    }
+    to {
+        color: red;
+    }
+}
+
+.content {
+    display: block;
+    width: 600px;
+    height: 400px;
+    margin: auto;
+    background: url('/public/images/heart-bg.png') ;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    filter: opacity(0.5);
+    border-radius: 25px;
+}
+
+.hidden-message {
+    width: 550px;
+    height: 350px;
+    background-color: wheat;
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    border-radius: 25px;
+    font-size: 20px;
+    display: block;
+    filter: opacity(0.9);
+}
+
+.hidden-message p {
+    padding: 30px;
+}
+
+.copy-link {
+    width: 600px;
+    height: fit-content;
+    margin: 30px auto;
+}
+
+.copy-link button {
+    cursor: pointer;
+}
+
+.copy-link input {
+    margin-left: 20%;
+    margin-right: 10px;
+}
+
+.copy-link img {
+    width: 30px;
+    height: 30px;
+    margin-left: 5px;
+    opacity: 0;
+}
+
+

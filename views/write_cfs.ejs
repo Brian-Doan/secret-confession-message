@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Secret Message</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" 
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="/css/write_cfs.css">
+    </head>
+    <body>
+        <div class="page-header">
+            <h1>Secret Message</h1>
+        </div>
+        <form action="/" method="post">
+            <div class="form-design">
+                <h3 align="center">Write something...</h3>
+                <div class="form-group">
+                    <label for="">Your name</label>
+                    <input type="text" class="form-control" name="username" value="" placeholder="Your name/nickname...(not necessary)">
+                </div>
+    
+                <div class="form-group">
+                    <label for="">Confession</label>
+                    <textarea id="confession" name="confession" class="form-control" cols="30" rows="5" placeholder="Your confession..." required><%= confession %></textarea>
+                </div>
+        
+                <button type="submit">Send</button>
+            </div>
+        </form>
+    </body>
+</html>

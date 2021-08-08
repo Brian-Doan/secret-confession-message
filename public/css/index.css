@@ -1,0 +1,118 @@
+/* CSS for index page */
+.page-header {
+    display: block;
+    width: fit-content;
+    margin: 0 auto ;
+}
+
+h1 {
+    font-family: cursive;
+    color: aqua;
+    animation: flashFontColor 2s infinite;
+}
+
+@keyframes flashFontColor {
+    from {
+        color: aqua;
+    }
+    to {
+        color: red;
+    }
+}
+
+.content {
+    display: block;
+    width: 600px;
+    height: 400px;
+    margin: auto;
+    background: url('/public/images/heart-bg.png') ;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    filter: opacity(0.5);
+    border-radius: 25px;
+}
+
+.content .message {
+    display: block;
+    width: 400px;
+    height: 300px;
+    margin: auto;
+    box-sizing: border-box;
+    border-top: 150px solid wheat;
+    border-right: 200px solid lightcoral;
+    border-bottom: 150px solid wheat;
+    border-left: 200px solid lightcoral;
+    filter: opacity(0.7);
+    cursor: pointer;
+    animation: flashMessageColor 2s infinite;
+}
+
+@keyframes flashMessageColor {
+    from {
+        transform: translateY(50px) scale(1);
+        border-top: 150px solid wheat;
+        border-right: 200px solid lightcoral;
+        border-bottom: 150px solid wheat;
+        border-left: 200px solid lightcoral;
+    }
+    to {
+        transform: translateY(50px) scale(0.8);
+        border-top: 150px solid aqua;
+        border-right: 200px solid lightgreen;
+        border-bottom: 150px solid aqua;
+        border-left: 200px solid lightgreen;
+    }
+}
+
+.content .message .heart {
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    position: relative;
+    cursor: pointer;
+    animation: heartBeat 0.8s infinite;
+}
+
+.heart:before, .heart:after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.heart:before {
+    background-color: red;
+    left: -50%;
+}
+
+.heart:after {
+    background-color: red;
+    top: -50%;
+}
+
+@keyframes heartBeat {
+    from {
+        transform: translate(-50%,-50%) rotate(45deg) scale(1);
+    }
+    to {
+        transform: translate(-50%,-50%) rotate(45deg) scale(0.8);
+    }
+}
+
+.hidden-message {
+    width: 550px;
+    height: 350px;
+    background-color: wheat;
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    border-radius: 25px;
+    font-size: 20px;
+    display: none;
+}
+
+.hidden-message p {
+    padding: 30px;
+}
