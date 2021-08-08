@@ -1,5 +1,5 @@
-# secret-confession-message
-This app is just for fun.
+# Secret Confession Message
+This Web-App is just for fun.
 For more information please contact via:
   * E-mail: 
     minhquang.demon@gmail.com
