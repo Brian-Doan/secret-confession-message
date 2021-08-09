@@ -44,7 +44,7 @@ app.use('/', write_cfs)
 app.use('/share', share_cfs)
 
 // ========== Port listener ========== //
-const port = 2000
+const port = process.env.PORT || 2000
 app.listen(port, function() {
     console.log('This App is running on port ' + port)
 })
