@@ -24,7 +24,7 @@
         <div class="copy-link">
             <h5 align="center"> Copy the link below or click the button to copy to clipboard</h5>  
             <% confession.forEach((cfs) => { %>
-                <input type="text" value="https://secret-confession-message.herokuapp.com/share/<%= cfs.userID %>" id="copyLink">    
+                <input type="text" value="https://secretmessage.herokuapp.com/share/<%= cfs.userID %>" id="copyLink">    
             <% }); %>
             <button onclick="copyLinkToClipboard()">Copy text</button>
         </div>
