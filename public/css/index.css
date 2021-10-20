@@ -1,18 +1,18 @@
 /* CSS for index page */
-.page-header {
-    display: block;
-    width: fit-content;
-    margin: 0 auto ;
+body, html {
+    height: 100%;
+    margin: 0;
 }
 
 h1 {
+    text-align: center;
     font-family: cursive;
-    color: aqua;
-    animation: flashFontColor 2s infinite;
+    text-shadow: 2px 2px 4px white, 0 0 25px white, 0 0 5px white;
+    animation: flashContentHeader 2s infinite;
 }
 
-@keyframes flashFontColor {
-    from {
+@keyframes flashContentHeader {
+    from{
         color: aqua;
     }
     to {
@@ -20,99 +20,591 @@ h1 {
     }
 }
 
-.content {
-    display: block;
-    width: 600px;
-    height: 400px;
-    margin: auto;
-    background: url('/public/images/heart-bg.png') ;
-    background-repeat: no-repeat;
+.bg-img {
+    background-image: url('/images/heart-bg.png');  
+    filter: blue(20px);
+    -webkit-filter: blur(20px);
+    height: 100%;
     background-position: center;
+    background-repeat: no-repeat;  
     background-size: cover;
-    filter: opacity(0.5);
-    border-radius: 25px;
+    
 }
 
-.content .message {
-    display: block;
-    width: 400px;
-    height: 300px;
-    margin: auto;
+.content {
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.4);
+    color: white;
+    font-weight: bold;
+    border: 3px solid #f1f1f1;
+    border-radius: 25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 80%;
+    height: 60%;
+    padding: 20px;
+    text-align: center;
+}
+
+.content-header, .content-footer {
+    margin-bottom: 0.25rem;
+}
+
+.content-header {
+    top: 5%;
+}
+
+.content-footer {
+    bottom: 5%;
+}
+
+.message {
+    width: 24rem;
+    height: 15rem;
+    margin: 1rem auto;
     box-sizing: border-box;
-    border-top: 150px solid wheat;
-    border-right: 200px solid lightcoral;
-    border-bottom: 150px solid wheat;
-    border-left: 200px solid lightcoral;
-    filter: opacity(0.7);
+    border-top: 7.5rem solid #FFCCD2;
+    border-right: 12rem solid #FFF7E0;
+    border-bottom: 7.5rem solid #FFF7E0;
+    border-left: 12rem solid #FFF7E0;
+    animation: flashColorEnvelope 2s infinite;
     cursor: pointer;
-    animation: flashMessageColor 2s infinite;
 }
 
-@keyframes flashMessageColor {
+@keyframes flashColorEnvelope {
     from {
-        transform: translateY(50px) scale(1);
-        border-top: 150px solid wheat;
-        border-right: 200px solid lightcoral;
-        border-bottom: 150px solid wheat;
-        border-left: 200px solid lightcoral;
+        border-top: 7.5rem solid #FFCCD2;
+        border-right: 12rem solid #FFF7E0;
+        border-bottom: 7.5rem solid #FFF7E0;
+        border-left: 12rem solid #FFF7E0;
+        transform: scale(1);
     }
     to {
-        transform: translateY(50px) scale(0.8);
-        border-top: 150px solid aqua;
-        border-right: 200px solid lightgreen;
-        border-bottom: 150px solid aqua;
-        border-left: 200px solid lightgreen;
+        border-top: 7.5rem solid #B2F9FC;
+        border-right: 12rem solid #FFCCD2;
+        border-bottom: 7.5rem solid #FFCCD2;
+        border-left: 12rem solid #FFCCD2;
+        transform: scale(0.9);
     }
 }
 
-.content .message .heart {
-    width: 30px;
-    height: 30px;
-    background-color: red;
+.hidden-msg {
     position: relative;
-    cursor: pointer;
-    animation: heartBeat 0.8s infinite;
-}
-
-.heart:before, .heart:after {
-    content: '';
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-}
-
-.heart:before {
-    background-color: red;
-    left: -50%;
-}
-
-.heart:after {
-    background-color: red;
-    top: -50%;
-}
-
-@keyframes heartBeat {
-    from {
-        transform: translate(-50%,-50%) rotate(45deg) scale(1);
-    }
-    to {
-        transform: translate(-50%,-50%) rotate(45deg) scale(0.8);
-    }
-}
-
-.hidden-message {
-    width: 550px;
-    height: 350px;
+    width: 50%;
+    height: 50%;
     background-color: wheat;
-    position: absolute;
-    top: 25px;
-    left: 25px;
+    top: 15%;
+    left: 25%;
+    padding: 25px;
     border-radius: 25px;
-    font-size: 20px;
     display: none;
 }
 
-.hidden-message p {
-    padding: 30px;
+.hidden-msg p {
+    margin: auto;
+    color: black;
+    font-size: 1.5rem;
+}
+
+/*  Small screen */
+@media screen and (max-width: 350px) {
+    h1 {
+        font-size: 1.5rem;
+        text-align: center;
+        font-family: cursive;
+        text-shadow: 2px 2px 4px white, 0 0 25px white, 0 0 5px white;
+        animation: flashContentHeader 2s infinite;
+    }
+
+    .content {
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0, 0.4);
+        color: white;
+        font-weight: bold;
+        border: 3px solid #f1f1f1;
+        border-radius: 25px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        width: 80%;
+        height: 45%;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .message {
+        width: 12rem;
+        height: 10rem;
+        margin: 1rem auto;
+        box-sizing: border-box;
+        border-top: 5rem solid #FFCCD2;
+        border-right: 6rem solid #FFF7E0;
+        border-bottom: 5rem solid #FFF7E0;
+        border-left: 6rem solid #FFF7E0;
+        animation: flashColorEnvelope 2s infinite;
+        cursor: pointer;
+    }
+    
+    @keyframes flashColorEnvelope {
+        from {
+            border-top: 5rem solid #FFCCD2;
+            border-right: 6rem solid #FFF7E0;
+            border-bottom: 5rem solid #FFF7E0;
+            border-left: 6rem solid #FFF7E0;
+            transform: scale(1);
+        }
+        to {
+            border-top: 5rem solid #B2F9FC;
+            border-right: 6rem solid #FFCCD2;
+            border-bottom: 5rem solid #FFCCD2;
+            border-left: 6rem solid #FFCCD2;
+            transform: scale(0.9);
+        }
+    }
+
+    .hidden-msg {
+        position: relative;
+        width: 80%;
+        height: 80%;
+        background-color: wheat;
+        top: 5%;
+        left: 10%;
+        padding: 25px;
+        border-radius: 25px;
+        display: none;
+    }
+    
+    .hidden-msg p {
+        margin: auto;
+        color: black;
+        font-size: .875rem;
+    }
+}
+
+/*  Medium screen */
+@media screen and (min-width: 350px) {
+    h1 {
+        font-size: 1.10rem;
+        text-align: center;
+        font-family: cursive;
+        text-shadow: 2px 2px 4px white, 0 0 25px white, 0 0 5px white;
+        animation: flashContentHeader 2s infinite;
+    }
+
+    .content {
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0, 0.4);
+        color: white;
+        font-weight: bold;
+        border: 3px solid #f1f1f1;
+        border-radius: 25px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        width: 80%;
+        height: 45%;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .message {
+        width: 12rem;
+        height: 10rem;
+        margin: 1rem auto;
+        box-sizing: border-box;
+        border-top: 5rem solid #FFCCD2;
+        border-right: 6rem solid #FFF7E0;
+        border-bottom: 5rem solid #FFF7E0;
+        border-left: 6rem solid #FFF7E0;
+        animation: flashColorEnvelope 2s infinite;
+        cursor: pointer;
+    }
+    
+    @keyframes flashColorEnvelope {
+        from {
+            border-top: 5rem solid #FFCCD2;
+            border-right: 6rem solid #FFF7E0;
+            border-bottom: 5rem solid #FFF7E0;
+            border-left: 6rem solid #FFF7E0;
+            transform: scale(1);
+        }
+        to {
+            border-top: 5rem solid #B2F9FC;
+            border-right: 6rem solid #FFCCD2;
+            border-bottom: 5rem solid #FFCCD2;
+            border-left: 6rem solid #FFCCD2;
+            transform: scale(0.9);
+        }
+    }
+
+    .hidden-msg {
+        position: relative;
+        width: 80%;
+        height: 70%;
+        background-color: wheat;
+        top: 5%;
+        left: 10%;
+        padding: 25px;
+        border-radius: 25px;
+        display: none;
+    }
+    
+    .hidden-msg p {
+        margin: auto;
+        color: black;
+        font-size: 1.5rem;
+    }
+} 
+
+@media screen and (min-width: 450px) {
+    h1 {
+        font-size: 1.5rem;
+        text-align: center;
+        font-family: cursive;
+        text-shadow: 2px 2px 4px white, 0 0 25px white, 0 0 5px white;
+        animation: flashContentHeader 2s infinite;
+    }
+
+    .content {
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0, 0.4);
+        color: white;
+        font-weight: bold;
+        border: 3px solid #f1f1f1;
+        border-radius: 25px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        width: 80%;
+        height: 47%;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .message {
+        width: 16rem;
+        height: 12rem;
+        margin: 1rem auto;
+        box-sizing: border-box;
+        border-top: 6rem solid #FFCCD2;
+        border-right: 8rem solid #FFF7E0;
+        border-bottom: 6rem solid #FFF7E0;
+        border-left: 8rem solid #FFF7E0;
+        animation: flashColorEnvelope 2s infinite;
+        cursor: pointer;
+    }
+    
+    @keyframes flashColorEnvelope {
+        from {
+            border-top: 6rem solid #FFCCD2;
+            border-right: 8rem solid #FFF7E0;
+            border-bottom: 6rem solid #FFF7E0;
+            border-left: 8rem solid #FFF7E0;
+            transform: scale(1);
+        }
+        to {
+            border-top: 6rem solid #B2F9FC;
+            border-right: 8rem solid #FFCCD2;
+            border-bottom: 6rem solid #FFCCD2;
+            border-left: 8rem solid #FFCCD2;
+            transform: scale(0.9);
+        }
+    }
+
+    .hidden-msg {
+        position: relative;
+        width: 80%;
+        height: 70%;
+        background-color: wheat;
+        top: 5%;
+        left: 10%;
+        padding: 25px;
+        border-radius: 25px;
+        display: none;
+    }
+    
+    .hidden-msg p {
+        margin: auto;
+        color: black;
+        font-size: 1.5rem;
+    }
+} 
+
+@media screen and (min-width:550px) {
+    h1 {
+        font-size: 2rem;
+        text-align: center;
+        font-family: cursive;
+        text-shadow: 2px 2px 4px white, 0 0 25px white, 0 0 5px white;
+        animation: flashContentHeader 2s infinite;
+    }
+
+    .content {
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0, 0.4);
+        color: white;
+        font-weight: bold;
+        border: 3px solid #f1f1f1;
+        border-radius: 25px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        width: 80%;
+        height: 50%;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .message {
+        width: 20rem;
+        height: 12rem;
+        margin: 1rem auto;
+        box-sizing: border-box;
+        border-top: 6rem solid #FFCCD2;
+        border-right: 10rem solid #FFF7E0;
+        border-bottom: 6rem solid #FFF7E0;
+        border-left: 10rem solid #FFF7E0;
+        animation: flashColorEnvelope 2s infinite;
+        cursor: pointer;
+    }
+    
+    @keyframes flashColorEnvelope {
+        from {
+            border-top: 6rem solid #FFCCD2;
+            border-right: 10rem solid #FFF7E0;
+            border-bottom: 6rem solid #FFF7E0;
+            border-left: 10rem solid #FFF7E0;
+            transform: scale(1);
+        }
+        to {
+            border-top: 6rem solid #B2F9FC;
+            border-right: 10rem solid #FFCCD2;
+            border-bottom: 6rem solid #FFCCD2;
+            border-left: 10rem solid #FFCCD2;
+            transform: scale(0.9);
+        }
+    }
+
+    .hidden-msg {
+        position: relative;
+        width: 80%;
+        height: 70%;
+        background-color: wheat;
+        top: 5%;
+        left: 10%;
+        padding: 25px;
+        border-radius: 25px;
+        display: none;
+    }
+    
+    .hidden-msg p {
+        margin: auto;
+        color: black;
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (min-width: 650px) {
+    .content {
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0, 0.4);
+        color: white;
+        font-weight: bold;
+        border: 3px solid #f1f1f1;
+        border-radius: 25px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        width: 80%;
+        height: 60%;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .message {
+        width: 26rem;
+        height: 16rem;
+        margin: 1rem auto;
+        box-sizing: border-box;
+        border-top: 8rem solid #FFCCD2;
+        border-right: 13rem solid #FFF7E0;
+        border-bottom: 8rem solid #FFF7E0;
+        border-left: 13rem solid #FFF7E0;
+        animation: flashColorEnvelope 2s infinite;
+        cursor: pointer;
+    }
+    
+    @keyframes flashColorEnvelope {
+        from {
+            border-top: 8rem solid #FFCCD2;
+            border-right: 13rem solid #FFF7E0;
+            border-bottom: 8rem solid #FFF7E0;
+            border-left: 13rem solid #FFF7E0;
+            transform: scale(1);
+        }
+        to {
+            border-top: 8rem solid #B2F9FC;
+            border-right: 13rem solid #FFCCD2;
+            border-bottom: 8rem solid #FFCCD2;
+            border-left: 13rem solid #FFCCD2;
+            transform: scale(0.9);
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+        text-align: center;
+        font-family: cursive;
+        text-shadow: 2px 2px 4px white, 0 0 25px white, 0 0 5px white;
+        animation: flashContentHeader 2s infinite;
+    }
+
+    .content {
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0, 0.4);
+        color: white;
+        font-weight: bold;
+        border: 3px solid #f1f1f1;
+        border-radius: 25px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        width: 80%;
+        height: 60%;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .message {
+        width: 26rem;
+        height: 16rem;
+        margin: 1rem auto;
+        box-sizing: border-box;
+        border-top: 8rem solid #FFCCD2;
+        border-right: 13rem solid #FFF7E0;
+        border-bottom: 8rem solid #FFF7E0;
+        border-left: 13rem solid #FFF7E0;
+        animation: flashColorEnvelope 2s infinite;
+        cursor: pointer;
+    }
+    
+    @keyframes flashColorEnvelope {
+        from {
+            border-top: 8rem solid #FFCCD2;
+            border-right: 13rem solid #FFF7E0;
+            border-bottom: 8rem solid #FFF7E0;
+            border-left: 13rem solid #FFF7E0;
+            transform: scale(1);
+        }
+        to {
+            border-top: 8rem solid #B2F9FC;
+            border-right: 13rem solid #FFCCD2;
+            border-bottom: 8rem solid #FFCCD2;
+            border-left: 13rem solid #FFCCD2;
+            transform: scale(0.9);
+        }
+    }
+
+    .hidden-msg {
+        position: relative;
+        width: 80%;
+        height: 70%;
+        background-color: wheat;
+        top: 5%;
+        left: 10%;
+        padding: 25px;
+        border-radius: 25px;
+        display: none;
+    }
+    
+    .hidden-msg p {
+        margin: auto;
+        color: black;
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .content {
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0, 0.4);
+        color: white;
+        font-weight: bold;
+        border: 3px solid #f1f1f1;
+        border-radius: 25px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        width: 80%;
+        height: 70%;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .message {
+        width: 30rem;
+        height: 20rem;
+        margin: 1rem auto;
+        box-sizing: border-box;
+        border-top: 10rem solid #FFCCD2;
+        border-right: 15rem solid #FFF7E0;
+        border-bottom: 10rem solid #FFF7E0;
+        border-left: 15rem solid #FFF7E0;
+        animation: flashColorEnvelope 2s infinite;
+        cursor: pointer;
+    }
+    
+    @keyframes flashColorEnvelope {
+        from {
+            border-top: 10rem solid #FFCCD2;
+            border-right: 15rem solid #FFF7E0;
+            border-bottom: 10rem solid #FFF7E0;
+            border-left: 15rem solid #FFF7E0;
+            transform: scale(1);
+        }
+        to {
+            border-top: 10rem solid #B2F9FC;
+            border-right: 15rem solid #FFCCD2;
+            border-bottom: 10rem solid #FFCCD2;
+            border-left: 15rem solid #FFCCD2;
+            transform: scale(0.9);
+        }
+    }
+
+    .hidden-msg {
+        position: relative;
+        width: 80%;
+        height: 70%;
+        background-color: wheat;
+        top: 5%;
+        left: 10%;
+        padding: 25px;
+        border-radius: 25px;
+        display: none;
+    }
+    
+    .hidden-msg p {
+        margin: auto;
+        color: black;
+        font-size: 1.5rem;
+    }
 }
