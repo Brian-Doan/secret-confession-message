@@ -10,17 +10,18 @@
         <link rel="stylesheet" href="/css/index.css">
     </head>
     <body>
-        <div class="page-header">
-            <h1>Secret Message</h1>
-        </div>
+        <div class="bg-img"></div>
+
         <div class="content">
-            <div class="message" onClick="openSecretMessage()">
-                <div class="heart" onClick="openSecretMessage()"></div>
+            <h1 class="content-header" id="header"> Secret Message </h1>
+
+            <div class="message" onclick="openSecretMessage()" id="popping-msg"></div>
+
+            <div class="hidden-msg" id="hidden-msg">
+                 <p> <%= confession %> </p>
             </div>
-            <div class="hidden-message" id="secret-message">
-                    <p> <%= confession %> </p>
-                
-            </div>
+
+            <h1 class="content-footer" id="footer"> Click to reveal </h1>
         </div>
 
         <script type="text/javascript" src="/js/openSecretMessage.js"></script>
